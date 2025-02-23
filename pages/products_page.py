@@ -7,7 +7,6 @@ class ProductsPage(BasePage):
     ALL_PRODUCT_LOCATOR = '//div[text()="{product_name}"]/ancestor::div[@class="inventory_item"]'
     ADD_TO_CARD_BUTTON_LOCATOR = (By.CSS_SELECTOR, "button[id^='add-to-cart']")
 
-
     def get_product_by_name(self, product_name):
         locator = self.ALL_PRODUCT_LOCATOR.format(product_name=product_name)
         return self.find_element((By.XPATH, locator))

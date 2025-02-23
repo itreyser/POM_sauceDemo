@@ -7,6 +7,7 @@ class LoginPage(BasePage):
     PASSWORD_INPUT = (By.ID, "password")
     LOGIN_BUTTON = (By.ID, "login-button")
     ERROR_MESSAGE = (By.CLASS_NAME, "error-message-container")
+    ERROR_BUTTON_MESSAGE = (By.CSS_SELECTOR, "button[class='error-button']")
 
     def enter_username(self, username):
         self.enter_text(self.USERNAME_INPUT, username)
@@ -24,3 +25,6 @@ class LoginPage(BasePage):
         self.enter_username(username)
         self.enter_password(password)
         self.click_login()
+
+    def close_error_message(self):
+        self.find_element(self.ERROR_BUTTON_MESSAGE).click()
