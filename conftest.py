@@ -11,6 +11,7 @@ def driver():
     options.add_argument("--start-maximized")
     service = Service(ChromeDriverManager().install())
     config_driver = webdriver.Chrome(service=service, options=options)
+    config_driver.implicitly_wait(3)
     yield config_driver
     config_driver.quit()
 
