@@ -12,6 +12,7 @@ def driver():
     service = Service(ChromeDriverManager().install())
     config_driver = webdriver.Chrome(service=service, options=options)
     config_driver.implicitly_wait(3)
+    config_driver.get("https://www.saucedemo.com/")
     yield config_driver
     config_driver.quit()
 

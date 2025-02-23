@@ -13,7 +13,6 @@ def test_buy_backpack_success(driver):
     information_page = InformationPage(driver)
     overview_page = OverviewPage(driver)
     complete_page = CompletePage(driver)
-    login_page.open_url("https://www.saucedemo.com/")
     login_page.successes_login("standard_user","secret_sauce")
     product_page.click_add_product_by_bucket("Sauce Labs Backpack")
     product_page.click_to_basket()

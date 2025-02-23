@@ -12,7 +12,6 @@ from pages.login_page import LoginPage
 )
 def test_valid_login(driver, name, password):
     login_page = LoginPage(driver)
-    login_page.open_url("https://www.saucedemo.com/")
     login_page.enter_username(name)
     login_page.enter_password(password)
     login_page.click_login()
